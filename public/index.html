@@ -85,11 +85,11 @@
     <div id="intro" class="bg-dark text-white py-2">
       <div class="jumbotron jumbotron-fluid text-white d-flex align-items-center bg-dark mb-0" style="height: 100vh">
         <div class="container text-center">
-          <h1 class="display-2 font-weight-bold">AHMENG LABS</h1>
+          <span class="display-2 font-weight-bold mb-5" id="judul"></span>
           <br />
-          <p id="teks" class="lead">
+          <span id="teks" class="lead">
             
-          </p>
+          </span>
         </div>
       </div>
     </div>
@@ -151,7 +151,13 @@
     <script>
       var typed = new Typed("#teks", {
         strings: [`Ahmeng Labs adalah sebuah organisasi yang didirikan dengan tujuan untuk bersenang-senang dibandingkan untuk melakukan hal yang serius. Organisasi ini didirikan pada tanggal 9 Juni 2025. Nama <strong>Ahmeng</strong> disini mengacu pada sebuah nama panggilan untuk teman kesayangan kami. Meskipun kami tidak memiliki tujuan yang jelas, kami memiliki beberapa minat seperti pengembangan web, kecerdasan buatan, blockchain, dan cyber security.`],
-        typeSpeed: 5,
+        typeSpeed: 0.5,
+      })
+    </script>
+        <script>
+      var typed = new Typed("#judul", {
+        strings: [`AHMENG LABS`],
+        typeSpeed: 80,
       })
     </script>
   </body>
