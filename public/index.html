@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="icon.jpg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta name="generator" content="{Astro.generator}" />
 
     <!-- Primary Meta Tags -->
@@ -49,6 +49,92 @@
       html {
         scroll-behavior: smooth;
       }
+      
+      /* Mobile responsive styles */
+      @media (max-width: 768px) {
+        .display-2 {
+          font-size: 2.5rem !important;
+        }
+        
+        .display-4 {
+          font-size: 2rem !important;
+        }
+        
+        .jumbotron {
+          padding: 2rem 1rem !important;
+        }
+        
+        .navbar-brand {
+          font-size: 1.1rem;
+        }
+        
+        .card {
+          width: 100% !important;
+          max-width: 280px;
+          margin: 0 auto;
+        }
+        
+        .lead {
+          font-size: 1rem !important;
+          line-height: 1.4;
+        }
+        
+        /* Adjust section heights for mobile */
+        #intro .jumbotron, 
+        #project, 
+        #about {
+          min-height: 100vh !important;
+          height: auto !important;
+          padding: 3rem 0 !important;
+        }
+        
+        /* Better spacing for mobile */
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        
+        .mb-5 {
+          margin-bottom: 2rem !important;
+        }
+        
+        /* Ensure text is readable on mobile */
+        p {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .display-2 {
+          font-size: 2rem !important;
+        }
+        
+        .display-4 {
+          font-size: 1.75rem !important;
+        }
+        
+        .navbar-brand {
+          font-size: 1rem;
+        }
+        
+        .card {
+          max-width: 260px;
+        }
+        
+        .lead {
+          font-size: 0.9rem !important;
+        }
+        
+        /* Even smaller spacing for very small screens */
+        .mb-5 {
+          margin-bottom: 1.5rem !important;
+        }
+        
+        .py-5 {
+          padding: 2rem 0 !important;
+        }
+      }
     </style>
     <title>Ahmeng Labs</title>
   </head>
@@ -83,11 +169,10 @@
     </nav>
 
     <div id="intro" class="bg-dark text-white py-2">
-      <div class="jumbotron jumbotron-fluid text-white d-flex align-items-center bg-dark mb-0" style="height: 100vh">
+      <div class="jumbotron jumbotron-fluid text-white d-flex align-items-center bg-dark mb-0" style="min-height: 100vh">
         <div class="container text-center">
-          <span class="display-2 font-weight-bold mb-5" id="judul"></span>
-          <br />
-          <span id="teks" class="lead">
+          <span class="display-2 font-weight-bold mb-3 d-block" id="judul"></span>
+          <span id="teks" class="lead d-block mt-4">
             
           </span>
         </div>
@@ -100,10 +185,10 @@
     >
       <div class="container text-center">
         <h1 class="display-4 mb-5">PROJECT KAMI</h1>
-        <div class="row justify-content-center gx-4">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
-            <div class="card bg-dark text-white" style="width: 18rem">
-              <img src="/bot.png" class="card-img-top" alt="..." />
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4">
+            <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
+              <img src="/bot.png" class="card-img-top" alt="WhatsApp Bot" style="height: 200px; object-fit: cover;" />
               <div class="card-body">
                 <h5 class="card-title">WhatsApp Bot</h5>
                 <p class="card-text">Ini adalah sebuah bot whatsapp sederhana yang mengintegrasikan Gemini.</p>
@@ -112,24 +197,24 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
-            <div class="card bg-dark text-white" style="width: 18rem">
-              <img src="/soon.jpg" class="card-img-top" alt="..." />
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4">
+            <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
+              <img src="/soon.jpg" class="card-img-top" alt="Coming Soon" style="height: 200px; object-fit: cover;" />
               <div class="card-body">
                 <h5 class="card-title">coming soon</h5>
                 <p class="card-text">coming soon</p>
-                <a href="https://github.com/ahmenglabs/whatsapp-bot" class="btn btn-primary disabled">coming soon</a>
+                <a href="#" class="btn btn-primary disabled">coming soon</a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-4">
-            <div class="card bg-dark text-white" style="width: 18rem">
-              <img src="/soon.jpg" class="card-img-top" alt="..." />
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4">
+            <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
+              <img src="/soon.jpg" class="card-img-top" alt="Coming Soon" style="height: 200px; object-fit: cover;" />
               <div class="card-body">
                 <h5 class="card-title">coming soon</h5>
                 <p class="card-text">coming soon</p>
-                <a href="https://github.com/ahmenglabs/whatsapp-bot" class="btn btn-primary disabled">coming soon</a>
+                <a href="#" class="btn btn-primary disabled">coming soon</a>
               </div>
             </div>
           </div>
@@ -137,14 +222,18 @@
       </div>
     </div>
 
-    <div id="about" class="bg-dark text-white py-5 d-flex align-items-center mb-0 data-scroll" style="height: 100vh">
+    <div id="about" class="bg-dark text-white py-5 d-flex align-items-center mb-0 data-scroll" style="min-height: 100vh">
       <div class="container text-center">
-        <h1 class="mb-5">CONTACT</h1>
-        <p>
-          Di masa depan, kami berencana untuk mengembangkan lebih banyak proyek yang menarik dan bermanfaat. Jadi jangan
-          ragu untuk menghubungi kami jika anda berminat untuk bergabung atau ingin menawarkan kerjasama.
-        </p>
-        <p>Hubungi kami lewat <a href="mailto:halo@ahmenglabs.codes">email</a></p>
+        <h1 class="mb-4">CONTACT</h1>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6">
+            <p class="mb-4">
+              Di masa depan, kami berencana untuk mengembangkan lebih banyak proyek yang menarik dan bermanfaat. Jadi jangan
+              ragu untuk menghubungi kami jika anda berminat untuk bergabung atau ingin menawarkan kerjasama.
+            </p>
+            <p>Hubungi kami lewat <a href="mailto:halo@ahmenglabs.codes" class="text-primary">email</a></p>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
