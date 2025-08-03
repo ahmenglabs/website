@@ -11,7 +11,9 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content="Ahmeng Labs" />
-    <meta property="og:title" content="Ahmeng Labs" />
+    <meta property="og:title" conten                  <a href="https://instagram.com/ahmenglabs" target="_blank" class="social-link" style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);">
+                    <span style="font-size: 1.2rem;">📷</span>
+                  </a>Ahmeng Labs" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ahmenglabs.codes" />
     <meta property="og:description" content="Isinya orang-orang malas." />
@@ -45,16 +47,249 @@
       crossorigin="anonymous"
     ></script>
     <script src="../scroll.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+      /* CSS Variables for Design System */
+      :root {
+        --primary-color: #1a73e8;
+        --secondary-color: #34a853;
+        --accent-color: #fbbc04;
+        --danger-color: #ea4335;
+        --surface-color: #ffffff;
+        --on-surface: #202124;
+        --on-surface-variant: #5f6368;
+        --outline: #dadce0;
+        --shadow-light: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        --shadow-medium: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        --shadow-heavy: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      }
+
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--on-surface);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .display-2 {
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      /* Smooth transitions */
+      * {
+        transition: all 0.2s ease;
       }
       .bg-cover {
-  background-image: url('back.png'); /* Ganti dengan path gambarmu */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+        background-image: url('back.png'); /* Ganti dengan path gambarmu */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      /* Button improvements */
+      .btn {
+        border: none;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background: var(--primary-color);
+        box-shadow: 0 2px 4px rgba(26, 115, 232, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: #1557b0;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(26, 115, 232, 0.4);
+      }
+
+      /* Floating elements */
+      .floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .floating-card {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .card-1 {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        left: 10%;
+        animation-delay: -2s;
+      }
+
+      .card-2 {
+        width: 60px;
+        height: 60px;
+        top: 60%;
+        right: 15%;
+        animation-delay: -4s;
+      }
+
+      .card-3 {
+        width: 100px;
+        height: 100px;
+        bottom: 20%;
+        left: 15%;
+        animation-delay: -1s;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+      }
+
+      /* Project card styles */
+      .project-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: var(--shadow-light);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid var(--outline);
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-heavy);
+      }
+
+      .project-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.05);
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+        display: flex;
+        align-items: flex-end;
+        padding: 1rem;
+      }
+
+      .project-tags {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--on-surface);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .project-content {
+        padding: 1.5rem;
+      }
+
+      /* Focus states for accessibility */
+      .nav-link:focus,
+      .btn:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+      }
+
+      /* Bootstrap 5 gap utilities for Bootstrap 4 compatibility */
+      .g-4 {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+      }
+
+      .g-4 > * {
+        margin-bottom: var(--bs-gutter-y);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+      }
+
+      /* Gap utilities */
+      .gap-3 {
+        gap: 1rem !important;
+      }
+
+      .d-flex.gap-3 > * {
+        margin-right: 1rem;
+      }
+
+      .d-flex.gap-3 > *:last-child {
+        margin-right: 0;
+      }
+
+      /* Contact section styles */
+      .contact-card {
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .btn-light:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important;
+      }
+
+      .social-link:hover {
+        transform: translateY(-3px) scale(1.1);
+        background: rgba(255,255,255,0.3) !important;
+      }
+
+      .contact-icon {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
       /* Mobile responsive styles */
       @media (max-width: 768px) {
@@ -172,36 +407,34 @@
     <title>Ahmeng Labs</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"> Ahmeng Labs</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-lg fixed-top bg-white" style="backdrop-filter: blur(20px); border-bottom: 1px solid var(--outline); box-shadow: var(--shadow-light);">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#" style="font-weight: 600; color: var(--on-surface);">
+          <div class="me-2 mr-2" style="width: 32px; height: 32px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">AL</div>
+          Ahmeng Labs
+        </a>
+        
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link data-scroll" href="#intro">INTRODUCTION</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link data-scroll" href="#project">PROJECT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link data-scroll" href="#about">CONTACT</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2 rounded-pill" href="#intro" style="color: var(--on-surface-variant); font-weight: 500;">Introduction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2 rounded-pill" href="#project" style="color: var(--on-surface-variant); font-weight: 500;">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3 py-2 rounded-pill" href="#about" style="color: var(--on-surface-variant); font-weight: 500;">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    <div id="intro" class="bg-secondary text-white py-2">
+    <div id="intro" class="bg-white text-white py-2">
       <div class="jumbotron jumbotron-fluid text-white d-flex align-items-center bg-cover mb-0" style="min-height: 100vh">
         <div class="container text-center">
           <span class="display-2 font-weight-bold mb-3 d-block" id="judul"></span>
@@ -211,43 +444,65 @@
         </div>
       </div>
     </div>
-    <div
-      id="project"
-      class="bg-secondary text-white py-5 d-flex align-items-center bg-secondary mb-0"
-      style="height: 100vh"
-    >
-      <div class="container text-center">
-        <h1 class="display-4 mb-5">PROJECT KAMI</h1>
-        <div class="row justify-content-center">
-          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4 card-animate">
-            <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
-              <img src="/bot.png" class="card-img-top" alt="WhatsApp Bot" style="height: 200px; object-fit: cover;" />
-              <div class="card-body">
-                <h5 class="card-title">WhatsApp Bot</h5>
-                <p class="card-text">Ini adalah sebuah bot whatsapp sederhana yang mengintegrasikan Gemini.</p>
-                <a href="https://github.com/ahmenglabs/whatsapp-bot" class="btn btn-primary">Go to code</a>
+    <div id="project" class="py-5" style="background: #f8f9fa;">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 mb-3" style="color: var(--on-surface);">Our Projects</h2>
+          <p class="lead text-muted">Innovative solutions built with passion and precision</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4 card-animate">
+            <div class="project-card h-100">
+              <div class="project-image">
+                <img src="/bot.png" alt="WhatsApp Bot" />
+                <div class="project-overlay">
+                  <div class="project-tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">Bot</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h5 class="mb-3">WhatsApp Bot</h5>
+                <p class="text-muted mb-4">Intelligent WhatsApp bot powered by Gemini AI for seamless conversations and automated responses.</p>
+                <a href="https://github.com/ahmenglabs/whatsapp-bot" class="btn btn-primary rounded-pill px-4">View Project</a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4 card-animate">
-            <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
-              <img src="/soon.jpg" class="card-img-top" alt="Coming Soon" style="height: 200px; object-fit: cover;" />
-              <div class="card-body">
-                <h5 class="card-title">coming soon</h5>
-                <p class="card-text">coming soon</p>
-                <a href="#" class="btn btn-primary disabled">coming soon</a>
+          <div class="col-12 col-md-6 col-lg-4 card-animate">
+            <div class="project-card h-100">
+              <div class="project-image">
+                <img src="/soon.jpg" alt="Coming Soon" />
+                <div class="project-overlay">
+                  <div class="project-tags">
+                    <span class="tag">Coming Soon</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h5 class="mb-3">Future Project</h5>
+                <p class="text-muted mb-4">Exciting new project in development. Stay tuned for updates on our innovative solutions.</p>
+                <button class="btn btn-outline-secondary rounded-pill px-4" disabled>Coming Soon</button>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4 card-animate">
-            <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
-              <img src="/soon.jpg" class="card-img-top" alt="Coming Soon" style="height: 200px; object-fit: cover;" />
-              <div class="card-body">
-                <h5 class="card-title">coming soon</h5>
-                <p class="card-text">coming soon</p>
-                <a href="#" class="btn btn-primary disabled">coming soon</a>
+          <div class="col-12 col-md-6 col-lg-4 card-animate">
+            <div class="project-card h-100">
+              <div class="project-image">
+                <img src="/soon.jpg" alt="Coming Soon" />
+                <div class="project-overlay">
+                  <div class="project-tags">
+                    <span class="tag">Coming Soon</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h5 class="mb-3">Another Project</h5>
+                <p class="text-muted mb-4">More innovative solutions on the way. We're constantly working on new ideas and implementations.</p>
+                <button class="btn btn-outline-secondary rounded-pill px-4" disabled>Coming Soon</button>
               </div>
             </div>
           </div>
@@ -255,16 +510,48 @@
       </div>
     </div>
 
-    <div id="about" class="bg-dark text-white py-5 d-flex align-items-center mb-0 data-scroll" style="min-height: 100vh">
-      <div class="container text-center">
-        <h1 class="mb-4">CONTACT</h1>
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-8 col-lg-6">
-            <p class="mb-4">
-              Di masa depan, kami berencana untuk mengembangkan lebih banyak proyek yang menarik dan bermanfaat. Jadi jangan
-              ragu untuk menghubungi kami jika anda berminat untuk bergabung atau ingin menawarkan kerjasama.
+    <div id="about" class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
+      <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="text-center">
+          <div class="mb-5">
+            <div class="contact-icon mb-4">
+              <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3);">
+                <span style="font-size: 2rem;">📧</span>
+              </div>
+            </div>
+            <h1 class="display-4 text-white mb-4" style="font-weight: 700;">Let's Connect</h1>
+            <p class="lead text-white mb-5" style="opacity: 0.9; max-width: 600px; margin: 0 auto;">
+              Di masa depan, kami berencana untuk mengembangkan lebih banyak proyek yang menarik dan bermanfaat. Jadi jangan ragu untuk menghubungi kami jika anda berminat untuk bergabung atau ingin menawarkan kerjasama.
             </p>
-            <p>Hubungi kami lewat <a href="mailto:halo@ahmenglabs.codes" class="text-primary">email</a></p>
+          </div>
+          
+          <div class="contact-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.2); max-width: 500px; margin: 0 auto;">
+            <h3 class="text-white mb-4" style="font-weight: 600;">Ready to Start Something Amazing?</h3>
+            
+            <div class="contact-methods">
+              <a href="mailto:halo@ahmenglabs.codes" class="btn btn-light btn-lg rounded-pill px-5 py-3 mb-3 d-block" style="font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                <span style="margin-right: 0.5rem;">✉️</span>
+                Send us an Email
+              </a>
+              
+              <div class="social-links mt-4">
+                <p class="text-white mb-3" style="opacity: 0.8;">Follow our journey:</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="https://github.com/ahmenglabs" target="_blank" class="social-link" style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);">
+                    <span style="font-size: 1.2rem;">🐙</span>
+                  </a>
+                  <a href="https://instagram.com/ahmenglabs" target="_blank" class="social-link" style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(10px);">
+                    <span style="font-size: 1.2rem;">�</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-5">
+            <p class="text-white" style="opacity: 0.7; font-size: 0.9rem;">
+              🚀 Response time: Usually within 24 hours
+            </p>
           </div>
         </div>
       </div>
