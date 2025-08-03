@@ -141,6 +141,33 @@
           padding: 2rem 0 !important;
         }
       }
+      
+      /* Card animation styles */
+      .card-animate {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s ease-out;
+        visibility: hidden;
+      }
+      
+      .card-animate.slide-in {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+      
+      /* Stagger animation for multiple cards */
+      .card-animate:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      
+      .card-animate:nth-child(2) {
+        transition-delay: 0.3s;
+      }
+      
+      .card-animate:nth-child(3) {
+        transition-delay: 0.5s;
+      }
     </style>
     <title>Ahmeng Labs</title>
   </head>
@@ -192,7 +219,7 @@
       <div class="container text-center">
         <h1 class="display-4 mb-5">PROJECT KAMI</h1>
         <div class="row justify-content-center">
-          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4">
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4 card-animate">
             <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
               <img src="/bot.png" class="card-img-top" alt="WhatsApp Bot" style="height: 200px; object-fit: cover;" />
               <div class="card-body">
@@ -203,7 +230,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4">
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4 card-animate">
             <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
               <img src="/soon.jpg" class="card-img-top" alt="Coming Soon" style="height: 200px; object-fit: cover;" />
               <div class="card-body">
@@ -214,7 +241,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4">
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4 card-animate">
             <div class="card bg-dark text-white" style="width: 18rem; max-width: 100%;">
               <img src="/soon.jpg" class="card-img-top" alt="Coming Soon" style="height: 200px; object-fit: cover;" />
               <div class="card-body">
@@ -257,6 +284,34 @@
         showCursor: false
       })
       
+    </script>
+    
+    <script>
+      // Scroll animation for cards
+      function animateOnScroll() {
+        const cards = document.querySelectorAll('.card-animate');
+        const triggerBottom = window.innerHeight / 5 * 4;
+        const triggerTop = window.innerHeight / 5;
+
+        cards.forEach(card => {
+          const cardTop = card.getBoundingClientRect().top;
+          const cardBottom = card.getBoundingClientRect().bottom;
+
+          // Show cards when they enter the viewport
+          if (cardTop < triggerBottom && cardBottom > triggerTop) {
+            card.classList.add('slide-in');
+          } else {
+            // Hide cards when they exit the viewport
+            card.classList.remove('slide-in');
+          }
+        });
+      }
+
+      // Run on scroll
+      window.addEventListener('scroll', animateOnScroll);
+      
+      // Run on page load
+      window.addEventListener('load', animateOnScroll);
     </script>
   </body>
 </html>
