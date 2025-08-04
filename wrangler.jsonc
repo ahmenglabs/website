@@ -5,7 +5,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ahmenglabs",
+  "main": "src/app.ts",
   "compatibility_date": "2025-08-03",
+  "compatibility_flags": ["global_fetch_strictly_public"],
   "assets": {
     "directory": "./public",
   },
@@ -24,6 +26,13 @@
    * databases, object storage, AI inference, real-time communication and more.
    * https://developers.cloudflare.com/workers/runtime-apis/bindings/
    */
+  "d1_databases": [
+    {
+      "binding": "database",
+      "database_name": "ahmenglabs-database",
+      "database_id": "0293ee4d-878c-4b60-ab44-8a91f3c7c952",
+    },
+  ],
 
   /**
    * Environment Variables
