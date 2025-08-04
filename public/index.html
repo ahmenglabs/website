@@ -532,6 +532,46 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
+
+      /* Responsive testimonials for mobile */
+      @media (max-width: 768px) {
+        .testimonial-item {
+          width: 280px !important;
+          min-height: 120px !important;
+        }
+        
+        .testimonials-container {
+          margin: 1rem 0 !important;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .testimonial-item {
+          width: 250px !important;
+          min-height: 100px !important;
+          margin-right: 10px !important;
+        }
+        
+        .testimonial-item .card-body {
+          padding: 0.75rem !important;
+        }
+        
+        .testimonial-item h6 {
+          font-size: 0.9rem !important;
+        }
+        
+        .testimonial-item small {
+          font-size: 0.8rem !important;
+        }
+        
+        .testimonials-row.top {
+          animation: scrollTestimonialsRight 8s linear infinite !important;
+        }
+
+        .testimonials-row.bottom {
+          animation: scrollTestimonialsLeft 10s linear infinite !important;
+        }
+      }
     </style>
     <title>Ahmeng Labs</title>
   </head>
@@ -1086,7 +1126,7 @@
               function createTestimonialElement(testimoni, index) {
                 const testimonialElement = document.createElement("div")
                 const avatar = testimoni.nama.charAt(0).toUpperCase()
-                const displayRole = testimoni.profesi || "Visitor"
+                const displayRole = testimoni.profesi || "Tidak Diketahui"
                 const colorScheme = colorSchemes[index % colorSchemes.length]
 
                 testimonialElement.className = "testimonial-item p-4"
@@ -1119,9 +1159,11 @@
 
               // Populate top row - smart duplication for true seamless scroll
               if (topTestimonials.length > 0) {
-                const minWidth = 1200 // Minimum total width needed
-                const itemWidth = 370 // Each testimonial width (350px + margin)
-                const minItems = Math.ceil(minWidth / itemWidth) + 2 // Extra buffer
+                const isMobile = window.innerWidth <= 576
+                const isTablet = window.innerWidth <= 768
+                const minWidth = isMobile ? 800 : isTablet ? 1000 : 1200
+                const itemWidth = isMobile ? 260 : isTablet ? 290 : 370
+                const minItems = Math.ceil(minWidth / itemWidth) + 2
                 const copies = Math.max(2, Math.ceil(minItems / topTestimonials.length))
 
                 for (let copy = 0; copy < copies; copy++) {
@@ -1134,9 +1176,11 @@
 
               // Populate bottom row - smart duplication for true seamless scroll
               if (bottomTestimonials.length > 0) {
-                const minWidth = 1200 // Minimum total width needed
-                const itemWidth = 370 // Each testimonial width (350px + margin)
-                const minItems = Math.ceil(minWidth / itemWidth) + 2 // Extra buffer
+                const isMobile = window.innerWidth <= 576
+                const isTablet = window.innerWidth <= 768
+                const minWidth = isMobile ? 800 : isTablet ? 1000 : 1200
+                const itemWidth = isMobile ? 260 : isTablet ? 290 : 370
+                const minItems = Math.ceil(minWidth / itemWidth) + 2
                 const copies = Math.max(2, Math.ceil(minItems / bottomTestimonials.length))
 
                 for (let copy = 0; copy < copies; copy++) {
