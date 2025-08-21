@@ -443,6 +443,12 @@ h6 {
   font-weight: 600;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .icon-margin-right {
@@ -622,6 +628,15 @@ h6 {
   }
 
   /* Contact section responsive adjustments */
+  .about-full {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  .about-container-min {
+    min-height: auto;
+  }
+
   .contact-card-custom {
     padding: 2rem 1.5rem;
     max-width: 90%;
@@ -635,6 +650,15 @@ h6 {
 
   .contact-icon-emoji {
     font-size: 1.6rem;
+  }
+
+  .contact-title-bold {
+    font-size: 2.5rem !important;
+  }
+
+  .contact-lead {
+    font-size: 1.1rem;
+    padding: 0 1rem;
   }
 }
 
@@ -686,6 +710,16 @@ h6 {
   }
 
   /* Contact section small screen adjustments */
+  .about-full {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+
+  .about-container-min {
+    min-height: auto;
+    padding: 1rem;
+  }
+
   .contact-card-custom {
     padding: 1.5rem 1rem;
     max-width: 95%;
@@ -703,8 +737,10 @@ h6 {
   }
 
   .btn-email {
-    padding: 0.75rem 1.5rem !important;
+    padding: 0.7rem 1.5rem !important;
     font-size: 0.95rem;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .contact-subtitle {
@@ -713,5 +749,98 @@ h6 {
 
   .social-follow-text {
     font-size: 0.9rem;
+  }
+
+  .contact-title-bold {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .contact-lead {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    margin-bottom: 2rem !important;
+  }
+
+  .social-link-circle {
+    width: 45px;
+    height: 45px;
+  }
+
+  .social-icon-size {
+    font-size: 1.2rem;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .about-full {
+    padding: 1.5rem 0;
+  }
+
+  .about-container-min {
+    padding: 0.5rem;
+  }
+
+  .contact-card-custom {
+    padding: 1.2rem 0.8rem;
+    max-width: 98%;
+    margin: 0 0.25rem;
+  }
+
+  .contact-icon-badge {
+    width: 56px;
+    height: 56px;
+  }
+
+  .contact-icon-emoji {
+    font-size: 1.2rem;
+  }
+
+  .contact-title-bold {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .contact-lead {
+    font-size: 0.9rem;
+    padding: 0;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .contact-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem !important;
+  }
+
+  .btn-email {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.85rem;
+    max-width: 95%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .btn-text-full {
+    display: none !important;
+  }
+
+  .btn-text-short {
+    display: inline !important;
+  }
+
+  .social-link-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon-size {
+    font-size: 1.1rem;
+  }
+
+  .social-follow-text {
+    font-size: 0.85rem;
   }
 }
