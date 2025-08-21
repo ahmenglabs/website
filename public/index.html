@@ -1,26 +1,32 @@
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="icon.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmeng Labs</title>
 
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Ahmeng Labs" />
-    <meta name="description" content="Isinya orang-orang malas." />
+    <link rel="canonical" href="https://ahmenglabs.codes/" />
+    <meta name="author" content="Ahmeng Labs" />
+    <meta name="description" content="Perkumpulan orang-orang newbie." />
+    <meta name="keywords" content="ahmeng, labs, newbie" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:site_name" content="Ahmeng Labs" />
+    <link rel="icon" type="image/png" href="/favicon.jpg" />
+
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ahmenglabs.codes" />
-    <meta property="og:description" content="Isinya orang-orang malas." />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content="https://ahmenglabs.codes" />
+    <meta property="og:url" content="https://ahmenglabs.codes/" />
+    <meta property="og:title" content="Ahmeng Labs" />
+    <meta property="og:description" content="Perkumpulan orang-orang newbie." />
+    <meta property="og:image" content="https://ahmenglabs.codes/assets/images/thumbnail.png" />
+    <meta property="og:site_name" content="Ahmeng Labs" />
+    <meta property="twitter:site" content="Ahmeng Labs" />
+    <meta property="twitter:creator" content="Ahmeng Labs" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ahmenglabs.codes/" />
     <meta property="twitter:title" content="Ahmeng Labs" />
-    <meta property="twitter:description" content="Isinya orang-orang malas." />
-
-    <!-- bootstrap -->
+    <meta property="twitter:description" content="Perkumpulan orang-orang newbie." />
+    <meta property="twitter:image" content="https://ahmenglabs.codes/assets/images/thumbnail.png" />
+    <meta property="twitter:image:alt" content="Ahmeng Labs" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
     <link
       rel="stylesheet"
@@ -43,589 +49,17 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- Google Fonts -->
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* CSS Variables for Design System */
-      :root {
-        --primary-color: #1a73e8;
-        --secondary-color: #34a853;
-        --accent-color: #fbbc04;
-        --danger-color: #ea4335;
-        --surface-color: #ffffff;
-        --on-surface: #202124;
-        --on-surface-variant: #5f6368;
-        --outline: #dadce0;
-        --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        --shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        --shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-      }
-
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
-        color: var(--on-surface);
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Inter", sans-serif;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-      }
-
-      .display-2 {
-        font-size: clamp(2.5rem, 8vw, 4.5rem);
-        font-weight: 700;
-        letter-spacing: -0.03em;
-      }
-
-      /* Smooth transitions */
-      * {
-        transition: all 0.2s ease;
-      }
-      .bg-cover {
-        background-image: url("back.png"); /* Ganti dengan path gambarmu */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-
-      /* Button improvements */
-      .btn {
-        border: none;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        transition: all 0.3s ease;
-      }
-
-      .btn-primary {
-        background: var(--primary-color);
-        box-shadow: 0 2px 4px rgba(26, 115, 232, 0.3);
-      }
-
-      .btn-primary:hover {
-        background: #1557b0;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(26, 115, 232, 0.4);
-      }
-
-      /* Floating elements */
-      .floating-elements {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .floating-card {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        backdrop-filter: blur(10px);
-        animation: float 6s ease-in-out infinite;
-      }
-
-      .card-1 {
-        width: 80px;
-        height: 80px;
-        top: 20%;
-        left: 10%;
-        animation-delay: -2s;
-      }
-
-      .card-2 {
-        width: 60px;
-        height: 60px;
-        top: 60%;
-        right: 15%;
-        animation-delay: -4s;
-      }
-
-      .card-3 {
-        width: 100px;
-        height: 100px;
-        bottom: 20%;
-        left: 15%;
-        animation-delay: -1s;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
-        }
-        50% {
-          transform: translateY(-20px) rotate(5deg);
-        }
-      }
-
-      /* Project card styles */
-      .project-card {
-        background: white;
-        border-radius: 16px;
-        box-shadow: var(--shadow-light);
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 1px solid var(--outline);
-      }
-
-      .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-heavy);
-      }
-
-      .project-image {
-        position: relative;
-        height: 200px;
-        overflow: hidden;
-      }
-
-      .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .project-card:hover .project-image img {
-        transform: scale(1.05);
-      }
-
-      .project-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
-        display: flex;
-        align-items: flex-end;
-        padding: 1rem;
-      }
-
-      .project-tags {
-        display: flex;
-        gap: 0.5rem;
-      }
-
-      .tag {
-        background: rgba(255, 255, 255, 0.9);
-        color: var(--on-surface);
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 500;
-      }
-
-      .project-content {
-        padding: 1.5rem;
-      }
-
-      /* Focus states for accessibility */
-      .nav-link:focus,
-      .btn:focus {
-        outline: 2px solid var(--primary-color);
-        outline-offset: 2px;
-      }
-
-      /* Navbar toggler styles */
-      .navbar-toggler {
-        border: none !important;
-        padding: 4px 8px;
-      }
-
-      .navbar-toggler:focus {
-        box-shadow: none !important;
-      }
-
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        width: 1.5em;
-        height: 1.5em;
-      }
-
-      /* Bootstrap 5 gap utilities for Bootstrap 4 compatibility */
-      .g-4 {
-        --bs-gutter-x: 1.5rem;
-        --bs-gutter-y: 1.5rem;
-      }
-
-      .g-4 > * {
-        margin-bottom: var(--bs-gutter-y);
-        padding-left: calc(var(--bs-gutter-x) * 0.5);
-        padding-right: calc(var(--bs-gutter-x) * 0.5);
-      }
-
-      /* Gap utilities */
-      .gap-3 {
-        gap: 1rem !important;
-      }
-
-      .d-flex.gap-3 > * {
-        margin-right: 1rem;
-      }
-
-      .d-flex.gap-3 > *:last-child {
-        margin-right: 0;
-      }
-
-      /* Contact section styles */
-      .contact-card {
-        animation: fadeInUp 1s ease-out;
-      }
-
-      .btn-light:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
-      }
-
-      .social-link:hover {
-        transform: translateY(-3px) scale(1.1);
-        background: rgba(255, 255, 255, 0.3) !important;
-      }
-
-      .contact-icon {
-        animation: float 3s ease-in-out infinite;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Mobile responsive styles */
-      @media (max-width: 768px) {
-        .display-2 {
-          font-size: 2.5rem !important;
-        }
-
-        .display-4 {
-          font-size: 2rem !important;
-        }
-
-        .jumbotron {
-          padding: 2rem 1rem !important;
-        }
-
-        .navbar-brand {
-          font-size: 1.1rem;
-        }
-
-        .card {
-          width: 100% !important;
-          max-width: 280px;
-          margin: 0 auto;
-        }
-
-        .lead {
-          font-size: 1rem !important;
-          line-height: 1.4;
-        }
-
-        /* Adjust section heights for mobile */
-        #intro .jumbotron,
-        #project,
-        #about {
-          min-height: 100vh !important;
-          height: auto !important;
-          padding: 3rem 0 !important;
-        }
-
-        /* Better spacing for mobile */
-        .container {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-
-        .mb-5 {
-          margin-bottom: 2rem !important;
-        }
-
-        /* Ensure text is readable on mobile */
-        p {
-          font-size: 0.95rem;
-          line-height: 1.5;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .display-2 {
-          font-size: 2rem !important;
-        }
-
-        .display-4 {
-          font-size: 1.75rem !important;
-        }
-
-        .navbar-brand {
-          font-size: 1rem;
-        }
-
-        .card {
-          max-width: 260px;
-        }
-
-        .lead {
-          font-size: 0.9rem !important;
-        }
-
-        /* Even smaller spacing for very small screens */
-        .mb-5 {
-          margin-bottom: 1.5rem !important;
-        }
-
-        .py-5 {
-          padding: 2rem 0 !important;
-        }
-      }
-
-      /* Card animation styles */
-      .card-animate {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.6s ease-out;
-        visibility: hidden;
-      }
-
-      .card-animate.slide-in {
-        opacity: 1;
-        transform: translateY(0);
-        visibility: visible;
-      }
-
-      /* Stagger animation for multiple cards */
-      .card-animate:nth-child(1) {
-        transition-delay: 0.1s;
-      }
-
-      .card-animate:nth-child(2) {
-        transition-delay: 0.3s;
-      }
-
-      .card-animate:nth-child(3) {
-        transition-delay: 0.5s;
-      }
-
-      /* Testimonial Form Styles */
-      .form-control:focus {
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 0.2rem rgba(26, 115, 232, 0.25);
-        outline: none;
-      }
-
-      .testimonial-item {
-        animation: fadeInUp 0.6s ease-out;
-      }
-
-      .testimonial-form-card {
-        position: sticky;
-        top: 100px;
-      }
-
-      .testimonial-avatar {
-        flex-shrink: 0;
-      }
-
-      /* Form validation styles */
-      .form-control.is-invalid {
-        border-color: var(--danger-color);
-      }
-
-      .form-control.is-valid {
-        border-color: var(--secondary-color);
-      }
-
-      .invalid-feedback {
-        color: var(--danger-color);
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
-      }
-
-      .valid-feedback {
-        color: var(--secondary-color);
-        font-size: 0.875rem;
-        margin-top: 0.25rem;
-      }
-
-      /* Testimonial Card Styles */
-      .testimonial-card {
-        background: white;
-        border-radius: 16px;
-        box-shadow: var(--shadow-light);
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 1px solid var(--outline);
-        height: 100%;
-      }
-
-      .testimonial-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-heavy);
-      }
-
-      .testimonial-header {
-        padding: 1.5rem 1.5rem 0 1.5rem;
-        position: relative;
-      }
-
-      .testimonial-avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 600;
-        font-size: 24px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        margin-bottom: 1rem;
-      }
-
-      .testimonial-content {
-        padding: 0 1.5rem 1.5rem 1.5rem;
-      }
-
-      .testimonial-message {
-        font-style: italic;
-        color: var(--on-surface-variant);
-        line-height: 1.6;
-        margin-bottom: 1rem;
-        position: relative;
-      }
-
-      .badge-primary {
-        background-color: var(--primary-color) !important;
-        border: none;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      /* Responsive testimonials for mobile */
-      @media (max-width: 768px) {
-        .testimonial-card {
-          margin-bottom: 1.5rem;
-        }
-        
-        .testimonial-avatar {
-          width: 50px;
-          height: 50px;
-          font-size: 20px;
-        }
-        
-        .testimonial-content {
-          padding: 0 1rem 1rem 1rem;
-        }
-        
-        .testimonial-header {
-          padding: 1rem 1rem 0 1rem;
-        }
-        
-        /* Contact card responsive for tablet */
-        .contact-methods .btn-lg {
-          font-size: 1rem !important;
-          padding: 0.75rem 2rem !important;
-        }
-        
-        .social-link {
-          width: 45px !important;
-          height: 45px !important;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .testimonial-card {
-          margin-bottom: 1rem;
-        }
-        
-        .testimonial-avatar {
-          width: 45px;
-          height: 45px;
-          font-size: 18px;
-        }
-        
-        .testimonial-message {
-          font-size: 0.9rem;
-        }
-        
-        .testimonial-content h6 {
-          font-size: 1rem;
-        }
-        
-        .testimonial-content small {
-          font-size: 0.8rem;
-        }
-        
-        /* Contact card responsive */
-        .contact-methods .btn-lg {
-          font-size: 0.9rem !important;
-          padding: 0.6rem 1.5rem !important;
-        }
-        
-        .social-link {
-          width: 40px !important;
-          height: 40px !important;
-        }
-        
-        .contact-methods h3 {
-          font-size: 1.5rem !important;
-        }
-      }
-    </style>
-    <title>Ahmeng Labs</title>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg fixed-top bg-white"
-      style="backdrop-filter: blur(20px); border-bottom: 1px solid var(--outline); box-shadow: var(--shadow-light)"
-    >
+    <nav class="navbar navbar-expand-lg fixed-top bg-white nav-backdrop">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#" style="font-weight: 600; color: var(--on-surface)">
-          <div
-            class="me-2 mr-2"
-            style="
-              width: 32px;
-              height: 32px;
-              background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-              border-radius: 8px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: white;
-              font-weight: 700;
-              font-size: 14px;
-            "
-          >
-            AL
-          </div>
-          Ahmeng Labs
-        </a>
+        <a class="navbar-brand d-flex align-items-center brand" href="/"> Ahmeng Labs </a>
 
         <button
           class="navbar-toggler border-0"
@@ -642,44 +76,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a
-                class="nav-link px-3 py-2 rounded-pill"
-                href="#intro"
-                style="color: var(--on-surface-variant); font-weight: 500"
-                >Introduction</a
-              >
+              <a class="nav-link px-3 py-2 rounded-pill nav-link-custom" href="#intro">Introduction</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link px-3 py-2 rounded-pill"
-                href="#project"
-                style="color: var(--on-surface-variant); font-weight: 500"
-                >Projects</a
-              >
+              <a class="nav-link px-3 py-2 rounded-pill nav-link-custom" href="#members">Members</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link px-3 py-2 rounded-pill"
-                href="#testimonials"
-                style="color: var(--on-surface-variant); font-weight: 500"
-                >Testimoni</a
-              >
+              <a class="nav-link px-3 py-2 rounded-pill nav-link-custom" href="#project">Projects</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link px-3 py-2 rounded-pill"
-                href="#testimonial-form"
-                style="color: var(--on-surface-variant); font-weight: 500"
-                >Beri Testimoni</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link px-3 py-2 rounded-pill"
-                href="#about"
-                style="color: var(--on-surface-variant); font-weight: 500"
-                >Contact</a
-              >
+              <a class="nav-link px-3 py-2 rounded-pill nav-link-custom" href="#about">Contact</a>
             </li>
           </ul>
         </div>
@@ -687,323 +93,70 @@
     </nav>
 
     <div id="intro" class="bg-white text-white py-2">
-      <div
-        class="jumbotron jumbotron-fluid text-white d-flex align-items-center bg-cover mb-0"
-        style="min-height: 100vh"
-      >
+      <div class="jumbotron jumbotron-fluid text-white d-flex align-items-center bg-cover mb-0 jumbotron-full">
         <div class="container text-center">
           <span class="display-2 font-weight-bold mb-3 d-block" id="judul"></span>
           <span id="teks" class="lead d-block mt-4"> </span>
         </div>
       </div>
     </div>
-    <div id="project" class="py-5" style="background: #f8f9fa">
+    <div id="members" class="py-5 members-bg">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="display-4 mb-3" style="color: var(--on-surface)">Our Projects</h2>
-          <p class="lead text-muted">Innovative solutions built with passion and precision</p>
+          <h2 class="display-4 mb-3" style="color: var(--on-surface)">Our Members</h2>
+          <p class="lead text-muted">Lihat orang-orang pemula yang membuat Ahmeng Labs berjalan.</p>
         </div>
 
-        <div class="row g-4 justify-content-center">
-          <div class="col-12 col-md-6 col-lg-4 card-animate">
-            <div class="project-card h-100">
-              <div class="project-image">
-                <img src="/bot.png" alt="WhatsApp Bot" />
-                <div class="project-overlay">
-                  <div class="project-tags">
-                    <span class="tag">AI</span>
-                    <span class="tag">Bot</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h5 class="mb-3">WhatsApp Bot</h5>
-                <p class="text-muted mb-4">
-                  Intelligent WhatsApp bot powered by Gemini AI for seamless conversations and automated responses.
-                </p>
-                <a href="https://github.com/ahmenglabs/whatsapp-bot" class="btn btn-primary rounded-pill px-4"
-                  >View Project</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 card-animate">
-            <div class="project-card h-100">
-              <div class="project-image">
-                <img src="/soon.jpg" alt="Coming Soon" />
-                <div class="project-overlay">
-                  <div class="project-tags">
-                    <span class="tag">Coming Soon</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h5 class="mb-3">Future Project</h5>
-                <p class="text-muted mb-4">
-                  Exciting new project in development. Stay tuned for updates on our innovative solutions.
-                </p>
-                <button class="btn btn-outline-secondary rounded-pill px-4" disabled>Coming Soon</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4 card-animate">
-            <div class="project-card h-100">
-              <div class="project-image">
-                <img src="/soon.jpg" alt="Coming Soon" />
-                <div class="project-overlay">
-                  <div class="project-tags">
-                    <span class="tag">Coming Soon</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <h5 class="mb-3">Another Project</h5>
-                <p class="text-muted mb-4">
-                  More innovative solutions on the way. We're constantly working on new ideas and implementations.
-                </p>
-                <button class="btn btn-outline-secondary rounded-pill px-4" disabled>Coming Soon</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="members-list" class="row g-4 justify-content-center"></div>
       </div>
     </div>
 
-    <!-- Testimonials Section -->
-    <div id="testimonials" class="py-5" style="background: #f8f9fa">
+    <div id="project" class="py-5 projects-bg">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="display-4 mb-3" style="color: var(--on-surface)">Testimoni</h2>
-          <p class="lead text-muted">Apa kata mereka tentang Ahmeng Labs</p>
+          <h2 class="display-4 mb-3" style="color: var(--on-surface)">Project Kami</h2>
+          <p class="lead text-muted">Project nya para pemula hehe.</p>
         </div>
 
-        <!-- Testimonials Grid -->
-        <div class="row g-4 justify-content-center" id="testimonialsGrid">
-          <!-- Testimonials will be populated here -->
-        </div>
-
-        <!-- Empty state component -->
-        <div
-          id="emptyTestimonials"
-          class="text-center py-5"
-          style="display: none"
-        >
-          <div style="font-size: 4rem; color: var(--on-surface-variant); margin-bottom: 1rem">💬</div>
-          <h5 style="color: var(--on-surface); font-weight: 600; margin-bottom: 0.5rem">Belum Ada Testimoni</h5>
-          <p style="color: var(--on-surface-variant); font-size: 0.9rem; margin-bottom: 1.5rem">
-            Jadilah yang pertama memberikan testimoni untuk Ahmeng Labs!
-          </p>
-          <div
-            style="
-              background: linear-gradient(135deg, rgba(26, 115, 232, 0.1), rgba(52, 168, 83, 0.1));
-              border-radius: 12px;
-              padding: 1rem;
-              border: 1px dashed var(--outline);
-              max-width: 300px;
-              margin: 0 auto;
-            "
-          >
-            <small style="color: var(--on-surface-variant)">
-              ✨ Ceritakan pengalaman Anda bergabung organisasi kami.
-            </small>
-          </div>
-        </div>
+        <div id="projects-list" class="row g-4 justify-content-center"></div>
       </div>
     </div>
 
-    <!-- Testimonial Form Section -->
-    <div id="testimonial-form" class="py-5" style="background: #ffffff">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="display-4 mb-3" style="color: var(--on-surface)">Berikan Testimoni</h2>
-          <p class="lead text-muted">Ceritakan pengalaman Anda dengan Ahmeng Labs</p>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <div
-              class="testimonial-form-card p-4"
-              style="
-                background: white;
-                border-radius: 16px;
-                box-shadow: var(--shadow-medium);
-                border: 1px solid var(--outline);
-              "
-            >
-              <form id="testimonialForm">
-                <div class="form-group mb-3">
-                  <label for="testimonialName" class="form-label" style="font-weight: 500; color: var(--on-surface)"
-                    >Nama</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="testimonialName"
-                    placeholder="Masukkan nama Anda"
-                    required
-                    style="
-                      border-radius: 12px;
-                      border: 2px solid var(--outline);
-                      padding: 12px;
-                      transition: all 0.3s ease;
-                    "
-                  />
-                </div>
-
-                <div class="form-group mb-3">
-                  <label for="testimonialRole" class="form-label" style="font-weight: 500; color: var(--on-surface)"
-                    >Profesi/Role (Opsional)</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="testimonialRole"
-                    placeholder="e.g. Developer, Student, etc."
-                    style="
-                      border-radius: 12px;
-                      border: 2px solid var(--outline);
-                      padding: 12px;
-                      transition: all 0.3s ease;
-                    "
-                  />
-                </div>
-
-                <div class="form-group mb-4">
-                  <label for="testimonialMessage" class="form-label" style="font-weight: 500; color: var(--on-surface)"
-                    >Pesan Testimoni</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="testimonialMessage"
-                    rows="4"
-                    placeholder="Ceritakan pengalaman Anda dengan Ahmeng Labs..."
-                    required
-                    style="
-                      border-radius: 12px;
-                      border: 2px solid var(--outline);
-                      padding: 12px;
-                      transition: all 0.3s ease;
-                      resize: vertical;
-                    "
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-block rounded-pill py-3"
-                  style="font-weight: 600; letter-spacing: 0.5px"
-                >
-                  <span style="margin-right: 8px">📝</span>
-                  Kirim Testimoni
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      id="about"
-      class="py-5"
-      style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh"
-    >
-      <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh">
+    <div id="about" class="py-5 about-bg about-full">
+      <div class="container d-flex align-items-center justify-content-center about-container-min">
         <div class="text-center">
           <div class="mb-5">
             <div class="contact-icon mb-4">
-              <div
-                style="
-                  width: 80px;
-                  height: 80px;
-                  background: rgba(255, 255, 255, 0.2);
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin: 0 auto;
-                  backdrop-filter: blur(10px);
-                  border: 1px solid rgba(255, 255, 255, 0.3);
-                "
-              >
-                <span style="font-size: 2rem">📧</span>
+              <div class="contact-icon-badge">
+                <span class="contact-icon-emoji">📧</span>
               </div>
             </div>
-            <h1 class="display-4 text-white mb-4" style="font-weight: 700">Contact</h1>
-            <p class="lead text-white mb-5" style="opacity: 0.9; max-width: 600px; margin: 0 auto">
-              Di masa depan, kami berencana untuk mengembangkan lebih banyak proyek yang menarik dan bermanfaat. Jadi
-              jangan ragu untuk menghubungi kami jika anda berminat untuk bergabung atau ingin menawarkan kerjasama.
+            <h1 class="display-4 text-white mb-4 contact-title-bold">Contact</h1>
+            <p class="lead text-white mb-5 contact-lead">
+              Kami sangat terbuka dengan anggota baru. Siapapun boleh bergabung ke perkumpulan para newbie ini.
             </p>
           </div>
 
-          <div
-            class="contact-card"
-            style="
-              background: rgba(255, 255, 255, 0.1);
-              backdrop-filter: blur(20px);
-              border-radius: 20px;
-              padding: 3rem 2rem;
-              border: 1px solid rgba(255, 255, 255, 0.2);
-              max-width: 500px;
-              margin: 0 auto;
-            "
-          >
-            <h3 class="text-white mb-4" style="font-weight: 600">Ingin bergabung?</h3>
+          <div class="contact-card contact-card-custom">
+            <h3 class="text-white mb-4 contact-subtitle">Ingin bergabung?</h3>
 
             <div class="contact-methods">
               <a
                 href="mailto:halo@ahmenglabs.codes"
-                class="btn btn-light btn-lg rounded-pill px-5 py-3 mb-3 d-block"
-                style="font-weight: 600; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); transition: all 0.3s ease"
+                class="btn btn-light btn-lg rounded-pill px-5 py-3 mb-3 d-block btn-email"
               >
-                <span style="margin-right: 0.5rem">✉️</span>
+                <span class="icon-margin-right">✉️</span>
                 Kirimkan kami sebuah Email
               </a>
 
               <div class="social-links mt-4">
-                <p class="text-white mb-3" style="opacity: 0.8">Follow our journey:</p>
+                <p class="text-white mb-3 social-follow-text">Follow our journey:</p>
                 <div class="d-flex justify-content-center gap-3">
-                  <a
-                    href="https://github.com/ahmenglabs"
-                    target="_blank"
-                    class="social-link"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      background: rgba(255, 255, 255, 0.2);
-                      border-radius: 50%;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      color: white;
-                      text-decoration: none;
-                      transition: all 0.3s ease;
-                      backdrop-filter: blur(10px);
-                    "
-                  >
-                    <span style="font-size: 1.2rem"><i class="fa-brands fa-github"></i></span>
+                  <a href="https://github.com/ahmenglabs" target="_blank" class="social-link social-link-circle">
+                    <span class="social-icon-size"><i class="fa-brands fa-github"></i></span>
                   </a>
-                  <a
-                    href="https://instagram.com/ahmenglabs"
-                    target="_blank"
-                    class="social-link"
-                    style="
-                      width: 50px;
-                      height: 50px;
-                      background: rgba(255, 255, 255, 0.2);
-                      border-radius: 50%;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      color: white;
-                      text-decoration: none;
-                      transition: all 0.3s ease;
-                      backdrop-filter: blur(10px);
-                    "
-                  >
-                    <span style="font-size: 1.2rem"><i class="fa-brands fa-instagram"></i></span>
+                  <a href="https://instagram.com/ahmenglabs" target="_blank" class="social-link social-link-circle">
+                    <span class="social-icon-size"><i class="fa-brands fa-instagram"></i></span>
                   </a>
                 </div>
               </div>
@@ -1013,297 +166,6 @@
       </div>
     </div>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-      var typed = new Typed("#teks", {
-        strings: [
-          `Ahmeng Labs adalah sebuah organisasi yang didirikan dengan tujuan untuk bersenang-senang dibandingkan untuk melakukan hal yang serius. Organisasi ini didirikan pada tanggal 9 Juni 2025. Nama <strong>Ahmeng</strong> disini mengacu pada sebuah nama panggilan untuk teman kesayangan kami. Meskipun kami tidak memiliki tujuan yang jelas, kami memiliki beberapa minat seperti pengembangan web, kecerdasan buatan, blockchain, dan cyber security.`,
-        ],
-        typeSpeed: 0.5,
-        showCursor: false,
-      })
-    </script>
-    <script>
-      var typed = new Typed("#judul", {
-        strings: [`AHMENG LABS`],
-        typeSpeed: 80,
-        showCursor: false,
-      })
-    </script>
-
-    <script>
-      // Scroll animation for cards
-      function animateOnScroll() {
-        const cards = document.querySelectorAll(".card-animate")
-        const triggerBottom = (window.innerHeight / 5) * 4
-        const triggerTop = window.innerHeight / 5
-
-        cards.forEach((card) => {
-          const cardTop = card.getBoundingClientRect().top
-          const cardBottom = card.getBoundingClientRect().bottom
-
-          // Show cards when they enter the viewport
-          if (cardTop < triggerBottom && cardBottom > triggerTop) {
-            card.classList.add("slide-in")
-          } else {
-            // Hide cards when they exit the viewport
-            card.classList.remove("slide-in")
-          }
-        })
-      }
-
-      // Run on scroll
-      window.addEventListener("scroll", animateOnScroll)
-
-      // Run on page load
-      window.addEventListener("load", animateOnScroll)
-    </script>
-
-    <script>
-      // Load testimonials from API
-      async function loadTestimonials() {
-        try {
-          const response = await fetch("/testimoni/list")
-          if (response.ok) {
-            const testimonials = await response.json()
-            const grid = document.getElementById("testimonialsGrid")
-            const emptyState = document.getElementById("emptyTestimonials")
-
-            // Color variations for testimonials
-            const colorSchemes = [
-              {
-                avatar: "linear-gradient(135deg, var(--primary-color), var(--secondary-color))",
-                accent: "var(--primary-color)",
-              },
-              {
-                avatar: "linear-gradient(135deg, var(--secondary-color), var(--accent-color))",
-                accent: "var(--secondary-color)",
-              },
-              {
-                avatar: "linear-gradient(135deg, var(--accent-color), var(--danger-color))",
-                accent: "var(--accent-color)",
-              },
-              {
-                avatar: "linear-gradient(135deg, #9c27b0, var(--primary-color))",
-                accent: "#9c27b0",
-              },
-              {
-                avatar: "linear-gradient(135deg, #ff5722, var(--secondary-color))",
-                accent: "#ff5722",
-              },
-              {
-                avatar: "linear-gradient(135deg, #00bcd4, var(--accent-color))",
-                accent: "#00bcd4",
-              },
-            ]
-
-            // Clear existing testimonials
-            grid.innerHTML = ""
-
-            // Check if we have testimonials
-            if (testimonials && testimonials.length > 0) {
-              // Hide empty state
-              emptyState.style.display = "none"
-
-              // Create testimonial cards
-              testimonials.forEach((testimoni, index) => {
-                const colorScheme = colorSchemes[index % colorSchemes.length]
-                const avatar = testimoni.nama.charAt(0).toUpperCase()
-                const displayRole = testimoni.profesi || "Member"
-
-                const cardElement = document.createElement("div")
-                cardElement.className = "col-12 col-md-6 col-lg-4 card-animate"
-                
-                cardElement.innerHTML = `
-                  <div class="testimonial-card">
-                    <div class="testimonial-header">
-                      <div class="testimonial-avatar" style="background: ${colorScheme.avatar};">
-                        ${avatar}
-                      </div>
-                      <h6 class="mb-1" style="font-weight: 600; color: var(--on-surface);">${testimoni.nama}</h6>
-                      <small class="text-muted" style="color: ${colorScheme.accent} !important; font-weight: 500;">${displayRole}</small>
-                    </div>
-                    <div class="testimonial-content">
-                      <p class="testimonial-message">${testimoni.pesan}</p>
-                    </div>
-                  </div>
-                `
-
-                grid.appendChild(cardElement)
-              })
-
-              // Trigger card animations
-              setTimeout(() => {
-                document.querySelectorAll('.card-animate').forEach(card => {
-                  card.classList.add('slide-in')
-                })
-              }, 100)
-            } else {
-              // Show empty state
-              emptyState.style.display = "block"
-            }
-          }
-        } catch (error) {
-          console.error("Error loading testimonials:", error)
-          // Show empty state on error
-          const emptyState = document.getElementById("emptyTestimonials")
-          if (emptyState) {
-            emptyState.style.display = "block"
-          }
-        }
-      }
-
-      // Load testimonials when page loads
-      document.addEventListener("DOMContentLoaded", loadTestimonials)
-
-      // Testimonial form handling with API
-      document.getElementById("testimonialForm").addEventListener("submit", async function (e) {
-        e.preventDefault()
-
-        const name = document.getElementById("testimonialName").value.trim()
-        const role = document.getElementById("testimonialRole").value.trim() || "Visitor"
-        const message = document.getElementById("testimonialMessage").value.trim()
-
-        // Basic validation with SweetAlert2
-        if (!name || !message) {
-          Swal.fire({
-            icon: "warning",
-            title: "Data Belum Lengkap",
-            text: "Nama dan pesan testimoni wajib diisi!",
-            confirmButtonText: "OK",
-            confirmButtonColor: "#1a73e8",
-          })
-          return
-        }
-
-        if (message.length < 5) {
-          Swal.fire({
-            icon: "warning",
-            title: "Pesan Terlalu Pendek",
-            text: "Pesan testimoni minimal 5 karakter!",
-            confirmButtonText: "OK",
-            confirmButtonColor: "#1a73e8",
-          })
-          return
-        }
-
-        if (message.length > 500) {
-          Swal.fire({
-            icon: "warning",
-            title: "Pesan Terlalu Panjang",
-            text: "Pesan testimoni maksimal 500 karakter!",
-            confirmButtonText: "OK",
-            confirmButtonColor: "#1a73e8",
-          })
-          return
-        }
-
-        const submitBtn = this.querySelector('button[type="submit"]')
-        const originalText = submitBtn.innerHTML
-
-        // Show loading state
-        submitBtn.innerHTML = '<span style="margin-right: 8px;">⏳</span>Mengirim...'
-        submitBtn.disabled = true
-
-        try {
-          // Send to API
-          const response = await fetch("/testimoni/add", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              nama: name,
-              profesi: role,
-              pesan: message,
-            }),
-          })
-
-          const result = await response.json()
-
-          if (response.ok) {
-            // Success - reload testimonials and show success message
-            await loadTestimonials()
-
-            // Reset form
-            this.reset()
-
-            // Show success message with SweetAlert2
-            Swal.fire({
-              icon: "success",
-              title: "Testimoni Terkirim!",
-              text: result.message || "Terima kasih atas feedback Anda!",
-              confirmButtonText: "OK",
-              confirmButtonColor: "#34a853",
-              timer: 3000,
-              timerProgressBar: true,
-            })
-
-            // Restore button
-            submitBtn.innerHTML = originalText
-            submitBtn.disabled = false
-          } else {
-            // Show error message from server
-            Swal.fire({
-              icon: "error",
-              title: "Gagal Mengirim Testimoni",
-              text: result.error || "Terjadi kesalahan saat mengirim testimoni.",
-              confirmButtonText: "Coba Lagi",
-              confirmButtonColor: "#ea4335",
-            })
-
-            // Restore button
-            submitBtn.innerHTML = originalText
-            submitBtn.disabled = false
-          }
-        } catch (error) {
-          console.error("Error submitting testimonial:", error)
-
-          // Show network error
-          Swal.fire({
-            icon: "error",
-            title: "Koneksi Bermasalah",
-            text: "Tidak dapat terhubung ke server. Silakan periksa koneksi internet Anda.",
-            confirmButtonText: "OK",
-            confirmButtonColor: "#ea4335",
-          })
-
-          // Restore button
-          submitBtn.innerHTML = originalText
-          submitBtn.disabled = false
-        }
-      })
-
-      // Real-time character count for message
-      const messageTextarea = document.getElementById("testimonialMessage")
-      const maxLength = 500
-
-      // Add character counter
-      const charCounter = document.createElement("small")
-      charCounter.className = "text-muted"
-      charCounter.style.float = "right"
-      messageTextarea.parentNode.appendChild(charCounter)
-
-      messageTextarea.addEventListener("input", function () {
-        const remaining = maxLength - this.value.length
-        charCounter.textContent = `${remaining} karakter tersisa`
-
-        if (remaining < 50) {
-          charCounter.style.color = "var(--danger-color)"
-        } else if (remaining < 100) {
-          charCounter.style.color = "var(--accent-color)"
-        } else {
-          charCounter.style.color = "var(--on-surface-variant)"
-        }
-
-        if (this.value.length > maxLength) {
-          this.value = this.value.substring(0, maxLength)
-          charCounter.textContent = "0 karakter tersisa"
-          charCounter.style.color = "var(--danger-color)"
-        }
-      })
-
-      // Trigger initial count
-      messageTextarea.dispatchEvent(new Event("input"))
-    </script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>
