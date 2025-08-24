@@ -137,55 +137,52 @@ window.addEventListener("load", animateOnScroll)
     .then((projects) => {
       projects.forEach((p) => {
         const col = document.createElement("div")
-        col.className = "col-12 col-md-6 col-lg-4 card-animate"
+        col.className = "col-12 col-sm-6 col-md-4 col-lg-3 card-animate"
 
         const card = document.createElement("div")
         card.className = "project-card h-100"
 
-        const imgWrap = document.createElement("div")
-        imgWrap.className = "project-image"
-        if (p.image && p.image.trim()) {
-          const img = document.createElement("img")
-          img.src = p.image
-          img.alt = p.title
-          img.onerror = function () {
-            if (this.src.includes("default-profile.jpg")) {
-              this.style.display = "none"
-              imgWrap.classList.add("blank")
-            } else {
-              this.src = "/assets/images/default-profile.jpg"
-            }
-          }
-          imgWrap.appendChild(img)
-        } else {
-          imgWrap.classList.add("blank")
-        }
-
-        const overlay = null
-
         const content = document.createElement("div")
         content.className = "project-content"
+
         const h5 = document.createElement("h5")
-        h5.className = "mb-3"
         h5.textContent = p.title
+
+        const dateEl = document.createElement("div")
+        dateEl.className = "project-date"
+        if (p.date) {
+          const date = new Date(p.date)
+          dateEl.textContent = date.toLocaleDateString("id-ID", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+
+        const divider = document.createElement("hr")
+        divider.className = "project-divider"
+
         const pEl = document.createElement("p")
-        pEl.className = "text-muted mb-4"
+        pEl.className = "project-description"
         pEl.textContent = p.description
+
+        const cta = document.createElement("div")
+        cta.className = "project-cta"
         const a = document.createElement("a")
         a.href = p.url || "#"
-        a.className = "btn btn-primary rounded-pill px-4"
+        a.className = "btn btn-primary rounded-pill px-3"
         a.target = "_blank"
         a.rel = "noopener noreferrer"
         a.textContent = "Lihat Project"
+        cta.appendChild(a)
 
         content.appendChild(h5)
+        content.appendChild(dateEl)
+        content.appendChild(divider)
         content.appendChild(pEl)
-        content.appendChild(a)
+        content.appendChild(cta)
 
-        card.appendChild(imgWrap)
-        if (overlay) card.appendChild(overlay)
         card.appendChild(content)
-
         col.appendChild(card)
         container.appendChild(col)
       })
