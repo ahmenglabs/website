@@ -10,5 +10,11 @@
     "description": "Kumpulan beberapa solusi dari soal pemrograman",
     "url": "https://github.com/ahmenglabs/algorithms",
     "date": "2025-08-24"
+  },
+  {
+    "title": "New Project Template",
+    "description": "Sebuah template untuk project baru yg menggunakan nodejs",
+    "url": "https://github.com/ahmenglabs/new-project-template",
+    "date": "2025-08-26"
   }
 ]
