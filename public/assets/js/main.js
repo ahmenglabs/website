@@ -2,15 +2,9 @@ if (window.Typed) {
   try {
     new Typed("#teks", {
       strings: [
-        "Ahmeng Labs adalah sebuah perkumpulan orang-orang newbie. Ahmeng Labs tidak memiliki tujuan untuk melakukan hal serius. Justru Ahmeng Labs adalah sebuah troll. Jadi jangan berharap atau merasa perkumpulan ini adalah saingan hehe.",
+        "Ahmeng Labs adalah sebuah perkumpulan orang-orang newbie. Ahmeng Labs tidak memiliki tujuan yang jelas. Apalagi memiliki tujuan untuk melakukan hal serius. Jadi Ahmeng Labs adalah sebuah troll atau sebuah lelucon. Jadi jangan berharap atau merasa perkumpulan ini adalah saingan hehe. Karena kami tidak sejago dirimu :)",
       ],
-      typeSpeed: 10,
-      showCursor: false,
-    })
-
-    new Typed("#judul", {
-      strings: ["Ahmeng Labs"],
-      typeSpeed: 80,
+      typeSpeed: 0.1,
       showCursor: false,
     })
   } catch (e) {
