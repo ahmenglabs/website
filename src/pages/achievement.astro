@@ -4,10 +4,151 @@ import Navbar from "../components/Navbar.astro"
 import Footer from "../components/Footer.astro"
 ---
 
-<Layout title="Achievement" description="Daftar pencapaian yang telah diraih oleh Ahmeng Labs" keywords={["achievement", "pencapaian", "ahmeng", "ahmeng labs", "ahmenglabs", "programming", "cyber security"]}>
+<Layout
+  title="Achievement"
+  description="Daftar pencapaian yang telah diraih oleh member Ahmeng Labs."
+  keywords={["achievement", "pencapaian", "ahmeng", "ahmeng labs", "ahmenglabs", "programming", "cyber security"]}
+>
   <Navbar />
   <div class="container py-4 py-xl-5">
-    <h2 class="text-center">TODO: Hehehe</h2>
+    <div class="row mb-5">
+      <div class="col-12">
+        <h1 class="text-center mb-4">Achievement</h1>
+        <p class="lead fw-normal text-center">Berikut adalah beberapa pencapaian yang telah diraih oleh member Ahmeng Labs.</p>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered border-dark">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 15%; font-weight: bold;">Timestamp</th>
+            <th scope="col" style="width: 20%; font-weight: bold;">Nama</th>
+            <th scope="col" style="width: 40%; font-weight: bold;">Deskripsi</th>
+            <th scope="col" style="width: 25%; font-weight: bold;">Attachment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p>20 September 2025</p>
+            </td>
+            <td>
+              Cyber Warior - Silver Award Capture The Flag (CTF) Competition
+            </td>
+            <td>Meraih Cyber Warior - Silver Award dalam kompetisi CTF (Capture The Flag) Nusantara Cyber Security.</td>
+            <td>
+              <img
+                src="/achievement/ncs 2025.png"
+                alt="Nusantara Cyber Security CTF 2025"
+                class="img-thumbnail"
+                style="max-width: 150px; cursor: pointer;"
+                data-bs-toggle="modal"
+                data-bs-target="#nomor-2"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>30 Juli 2025</p>
+            </td>
+            <td>
+              Juara 3 Capture The Flag (CTF) Competition
+            </td>
+            <td>Meraih juara 3 dalam kompetisi CTF (Capture The Flag) tingkat provinsi Lampung yang diselanggarakan oleh Dinas Kominfotiksan Pesawaran.</td>
+            <td>
+              <img
+                src="/achievement/6246919221116260407.jpg"
+                alt="Pesawaran CTF 2025"
+                class="img-thumbnail"
+                style="max-width: 150px; cursor: pointer;"
+                data-bs-toggle="modal"
+                data-bs-target="#nomor-1"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal fade" id="nomor-2" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Cyber Warior - Silver Award Capture The Flag (CTF) Competition</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div id="nomor-2-carousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#nomor-2-carousel" data-bs-slide-to="0" class="active"></button>
+                <!-- <button type="button" data-bs-target="#nomor-2-carousel" data-bs-slide-to="1"></button> -->
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/achievement/ncs 2025.png" 
+                       class="d-block w-100" 
+                       alt="Nusantara Cyber Security CTF 2025">
+                </div>
+                <!-- <div class="carousel-item">
+                  <img src="/achievement/d92536d0-7860-4749-b7a3-543aca50712c.jpeg" 
+                       class="d-block w-100" 
+                       alt="Foto Tim CTF">
+                </div> -->
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#testhehe" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#testhehe" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <Footer />
+
+    <div class="modal fade" id="nomor-1" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Juara 3 Capture The Flag (CTF) Competition</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div id="nomor-1-carousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#nomor-1-carousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#nomor-1-carousel" data-bs-slide-to="1"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/achievement/6246919221116260407.jpg" 
+                       class="d-block w-100" 
+                       alt="Pesawaran CTF 2025">
+                </div>
+                <div class="carousel-item">
+                  <img src="/achievement/d92536d0-7860-4749-b7a3-543aca50712c.jpeg" 
+                       class="d-block w-100" 
+                       alt="Pesawaran CTF 2025">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#testhehe" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#testhehe" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
+<Footer />
