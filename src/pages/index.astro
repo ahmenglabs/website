@@ -4,21 +4,20 @@ import Navbar from "../components/Navbar.astro"
 import Footer from "../components/Footer.astro"
 import heheImage from "../assets/hehe.jpg"
 ---
-
 <Layout title="Ahmeng Labs" description="Singkatnya ini adalah sebuah perkumpulan orang-orang newbie." keywords={["ahmeng", "ahmeng labs", "ahmenglabs", "home", "programming", "cyber security"]}>
-    <Navbar />
-    <div class="container py-4 py-xl-5">
-      <div class="row gy-4 gy-md-0">
-        <div class="col-md-6 border border-1 border-black pe-md-5">
-          <img class="rounded img-fluid object-fit-cover w-100" src={heheImage.src} alt="Hehe" />
-        </div>
-        <div class="col-md-6 col-xl-6 d-md-flex align-items-md-center ps-md-5">
-          <div>
-            <h1>Ahmeng Labs</h1>
-            <p class="lead fs-3 fst-italic">Singkatnya ini adalah sebuah perkumpulan orang-orang newbie.</p>
-          </div>
-        </div>
+  <Navbar />
+  <div class="container py-4 py-xl-5">
+    <div class="row gy-4 gy-md-0">
+    <div class="col-md-6 border border-1 border-black">
+      <img class="rounded img-fluid object-fit-cover w-100" src={heheImage.src} alt="Hehe" />
+    </div>
+    <div class="col-md-6 col-xl-6 d-md-flex align-items-md-center ps-md-5">
+      <div>
+      <h1>Ahmeng Labs</h1>
+      <p class="lead fs-3 fst-italic">Singkatnya ini adalah sebuah perkumpulan orang-orang newbie.</p>
       </div>
     </div>
-    <Footer />
+    </div>
+  </div>
+  <Footer />
 </Layout>
